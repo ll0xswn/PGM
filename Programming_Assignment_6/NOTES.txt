@@ -1,0 +1,144 @@
+
+https://class.coursera.org/pgm/forum/thread?thread_id=1807
+
+
+
+Not quite. Here's a brief summary of what the functions do:
+
+CalculateExpectedUtilityFactor is where the variable elimination happens: this is where most variables other than the decision variable and its parents are eliminated, leaving an Expected Utility Factor (EUF).
+
+OptimizeMEU involves constructing the optimal decision rule. This can be done by first getting the EUF (eg. by calling the previous function). Next, think about what a utility maximizing decision policy should do in the 2 cases when D has no parents, or D has parents:
+
+1) If D has no parents, then the factor at D should be a decision policy that deterministically selects the value for D that maximizes utility.
+
+2) If D has parents, then for each assignment to the parents of D, D should be be a decision policy that deterministically selects the value for D that maximizes utility.
+
+Here's a simple example:
+
+if X is a parent of decision node D, then a possible example EUF might look like this:
+
+D X
+
+1 1 -1
+
+2 1 3
+
+1 2 2
+
+2 2 -1
+
+Recall that the third column represents the expected utilities (since we multiplied our utility factor into our EUF). So in this case, when X is 1, our decision policy should select 2 as the utility maximizing decision, whereas when X is 2, our decision policy should select 1 instead. In factor terms, the decision factor D should look like:
+
+D X
+
+1 1 0.000000
+
+2 1 1.000000
+
+1 2 1.000000
+
+2 2 0.000000
+Posted by Bryan Hooi (Community TA)
+
+==================================================================================================
+
+
+I got really tired of trying to keep track of things when the variable order within a factor like the output of CalculateExpectedUtilityFactor didn't match the related Decision factor variable ordering. (This was likely to happen because FactorProduct returns the variables in ascending order.)
+
+So I wrote a little function to take care of this problem that I want to share. I don't think this is really defeating the purpose of the honor code, because the assignment isn't really about handling permutations.
+
+As far as I know, this works correctly, provided it receives appropriate input. It's not the most elegant code, I admit. And it's use at your own risk.
+
+    function F2 = ReorderFactorVars(F, newVarOrder)
+  % input:
+  % F is a factor with fields: var, card, and val
+  % newVarOrder is a reordering off the F.card array
+  %   so if F.card = [2,5,7], then [2,5,7] or [7,2,5] etc are legal
+  %   values for newVarOrder, while [2,5] or [2,5,1] etc are not legal
+  %
+  % output F2 is basically the same as F execept its var and card
+  % now match the reordered variables, and the .val array has been
+  % reordered to fit with the changed variables
+  %
+  % Thanks and credit to Alex Gilman for the [~,permute] in line 14 part
+  % and yes there probably are cleaner ways to implement this.
+  % Finally, use this at your own risk. I'd suggest trying it out on
+  % some test factors (like FullI.RandomFactors(1) ) to see what it does
+
+  assert(length(F.var) == length(newVarOrder));
+  [~, permute] = ismember(F.var, newVarOrder);
+  assert(length(F.var) == length(permute));
+  F2.var = newVarOrder;
+  F2.card = F.card(permute);
+  assignF = IndexToAssignment([1:prod(F.card)],F.card);
+  permAssign = assignF(:,permute);
+  assignF2 = IndexToAssignment([1:prod(F2.card)],F2.card);
+  colVect = ones(prod(F2.card),1);
+  idx = [];
+  for i = 1:prod(F2.card),
+    idx = [idx,find(~sum(abs(permAssign - colVect*assignF2(i,:)),2))];
+  end;
+  F2.val = F.val(idx);
+end
+
+The main use for this code is to make the output of CalculateExpectedUtilityFactor agree with I.DecisionFactors(1), particularly if you are using this as the basis for constructing your output OptimalDecisionFactor. It can also be used if you are trying to construct your own test data from existing test data.
+
+Hope this is of some assistance, and let me know if you find any errors.
+Posted by Patrick Tierney (Student)
+on Thu 26 Apr 2012 2:45:47 PM PDT 
+
+
+=============================================================================================================
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2021
+
+The influence diagram is in variable TestI0, again capital I, number 0. You'll be working with that variable name a lot, and if you misspell it you'll get wrong results that might not have an obvious cause.
+
+We are interested in random variable 11, the variable that encodes the test. I need hardly say that it is in factor 10 rather than factor 11.
+
+We get the results from network in utils, but need to report them in dollars. We are provided the conversion formula, not from utils to dollars, but from dollars to utils.
+
+On edit: Also check out (and rec!) Alicja's and Maxim's hints below:
+
+report th
+
+e difference between the original MEU and the changed MEU,
+
+use Matlab/Octave to calculate the dollar amount for accuracy,
+
+if your code isn't working, try putting [.9 .1.2 .8] in as the val for RandomFactors(10). You should get an MEU of -175.01. Also check whether a useless test with val [.5 .5 .5 .5] gives you a value of perfect information of 0 as it should.
+========================================================
+
+SimpleCalcExpectedUtility.m 
+alculateExpectedUtilityFactor.m (15 Pts) 
+ OptimizeMEU.m (
+OptimizeWithJointUtility.m (15 Pts) 
+OptimizeLinearExpectations.m 
+
+================================================
+
+Alex is correct - EU is the expected utility, which is a distinct concept from the expected utility factor (EUF). The EU is a scalar - it is the expected utility that results from an instantiated decision rule. The EUF is a construct that allows you to efficiently compute the maximum EU (MEU) and an optimal decision rule that yields the MEU. 
+
+
+====================================================================================================
+
+Quiz question 7- some pitfalls
+
+The influence diagram is in variable TestI0, again capital I, number 0. You'll be working with that variable name a lot, and if you misspell it you'll get wrong results that might not have an obvious cause.
+
+We are interested in random variable 11, the variable that encodes the test. I need hardly say that it is in factor 10 rather than factor 11.
+
+We get the results from network in utils, but need to report them in dollars. We are provided the conversion formula, not from utils to dollars, but from dollars to utils.
+
+On edit: Also check out (and rec!) Alicja's and Maxim's hints below:
+
+report the difference between the original MEU and the changed MEU,
+
+use Matlab/Octave to calculate the dollar amount for accuracy,
+
+if your code isn't working, try putting [.9 .1.2 .8] in as the val for RandomFactors(10). You should get an MEU of -175.01. Also check whether a useless test with val [.5 .5 .5 .5] gives you a value of perfect information of 0 as it should.
+
+Second edit: Philip points out:
+
+Something else to watch out for: the meaning of the assignments to variable 1, representing having ARVD or not, are reversed from those of x in the description at the beginning of Section 4. The question description says as much, just be careful. Assignment 1 means not having the disease, 2 means having the disease. The assignments to variable 11 are the same: 1 is a negative result, 2 is a positive result. If setting the .val vector of factor 10 directly, the usual ordering applies. IOW, [P(negative test result|no disease) P(positive test result|no disease) P(negative test result|disease) P(positive test result|disease)].
+

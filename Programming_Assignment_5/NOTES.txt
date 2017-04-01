@@ -1,0 +1,343 @@
+https://class.coursera.org/pgm/forum/thread?thread_id=1599
+
+
+When testing, you should load up exampleIOPA5.mat. It has test input and output data for the functions. This information is squirreled away on page 7 of the Programming Assignment, so you might not have noticed it as you began programming.
+
+In this data, the variable exampleINPUT has various structures with example input, numbered in a rather confusing fashion that doesn't correspond with the numbering in the rest of the document. Each function we have to write is given a number N, starting, I think, with 1 for NaiveGetNextClusters, and then the argument J to that function is exampleINPUT.tNaJ. So the input to NaiveGetNextClusters is exampleINPUT.t1a1.
+
+Note also that sometimes there is more than one value for a test input, such as in the case of the second test argument to NaiveGetNextClusters. If so, the example input for that variable will be a cell array. That does not mean the actual input for the actual function is a cell array; it means you should iterate over all the values in the cell array when testing your function. So you should test:
+
+NaiveGetNextClusters(exampleINPUTt1a1, exampleINPUTt1a2{1})
+
+NaiveGetNextClusters(exampleINPUTt1a1, exampleINPUTt1a2{2})
+
+NaiveGetNextClusters(exampleINPUTt1a1, exampleINPUTt1a2{3})
+
+
+
+==============================================================================
+
+
+https://class.coursera.org/pgm/forum/thread?thread_id=1508
+
+
+switch 5
+case 1
+    display('NaiveGetNextClusters')
+    result = 1;
+    for iter = 1:3
+        display(['iter ', num2str(iter),')'])
+        [i, j] = NaiveGetNextClusters( ...
+            exampleINPUT.t1a1, exampleINPUT.t1a2{iter});
+        display(['Output:   ', num2str([i, j])])
+        display(['Expected: ', num2str(exampleOUTPUT.t1{iter})])  
+        display(' ')
+        result = result && isequal([i, j],exampleOUTPUT.t1{iter});
+    end
+case 2
+    display('CreateClusterGraph')
+    P = CreateClusterGraph(exampleINPUT.t2a1, exampleINPUT.t2a2);
+    result = isequal(P, exampleOUTPUT.t2);
+case 3
+    display('CheckConvergence')
+    result = 1;
+    for iter = 1:2
+        display(['iter ', num2str(iter),')'])
+        converged = CheckConvergence( ...
+            exampleINPUT.t3a1{iter}, exampleINPUT.t3a2{iter});
+        display(['Output:   ', num2str(converged)])
+        display(['Expected: ', num2str(exampleOUTPUT.t3{iter})])  
+        display(' ')
+        result = result && (converged == exampleOUTPUT.t3{iter});
+    end    
+case 4
+    display('ClusterGraphCalibrate')
+    [P MESSAGES] = ClusterGraphCalibrate(exampleINPUT.t4a1, 0);
+    result = isequal(P, exampleOUTPUT.t4o1) && ...
+        isequal(MESSAGES, exampleOUTPUT.t4o2);
+case 5
+    display('ComputeApproxMarginalsBP')
+    M = ComputeApproxMarginalsBP( ...
+        exampleINPUT.t5a1, exampleINPUT.t5a2);
+    result = isequal(M, exampleOUTPUT.t5);        
+end
+
+if result
+    display('Correct answer!')
+else
+    display('Incorrect!')
+end
+
+
+
+case 6
+    display('BlockLogDistribution')
+    LogBS = BlockLogDistribution(exampleINPUT.t6a1, ...
+        exampleINPUT.t6a2, exampleINPUT.t6a3, exampleINPUT.t6a4);
+    display(['Output:   ', num2str(LogBS)])
+    display(['Expected: ', num2str(exampleOUTPUT.t6)]) 
+    result = isequal(LogBS, exampleOUTPUT.t6);
+case 7
+    display('GibbsTrans')
+    randi('seed',1);
+    result = 1;
+    for iter = 1:10
+        display(['iter ', num2str(iter),')'])
+        A = GibbsTrans(exampleINPUT.t7a1{iter}, ...
+            exampleINPUT.t7a2{iter}, exampleINPUT.t7a3{iter});
+        display(['Output:   ', num2str(A)])
+        display(['Expected: ', num2str(exampleOUTPUT.t7{iter})])  
+        display(' ')
+        result = result && isequal(A, exampleOUTPUT.t7{iter});
+    end
+case 8
+    display('MCMCInference')
+    % second iteration works if exampleINPUT.t8a4{2} = MHGibbs
+    result = 1;
+    randi('seed',1);
+    for iter = 1:2
+        display(['iter ', num2str(iter),')'])
+        [M, all_samples] = MCMCInference(exampleINPUT.t8a1{iter},...
+            exampleINPUT.t8a2{iter}, exampleINPUT.t8a3{iter}, ...
+            exampleINPUT.t8a4{iter}, exampleINPUT.t8a5{iter}, ...
+            exampleINPUT.t8a6{iter}, exampleINPUT.t8a7{iter}, ...
+            exampleINPUT.t8a8{iter});
+        result = isequal(M, exampleOUTPUT.t8o1{1,iter}) && ...
+            isequal(all_samples, exampleOUTPUT.t8o2{iter});
+    end
+case 9
+    display('MHUniformTrans')
+    randi('seed',1);
+    result = 1;
+    for iter = 1:10
+        A = MHUniformTrans(exampleINPUT.t9a1{iter}, ...
+            exampleINPUT.t9a2{iter}, exampleINPUT.t9a3{iter});
+        if isequal(A, exampleOUTPUT.t9{iter})
+            display(['iter ', num2str(iter),') ok'])
+        else
+            display(['iter ', num2str(iter),') x'])
+            result = 0;
+        end
+    end
+case 10
+    display('MHSWTrans (Variant 1)')
+    randi('seed',1);
+    result = 1;
+    for iter = 1:10
+        A = MHSWTrans(exampleINPUT.t10a1{iter}, ...
+            exampleINPUT.t10a2{iter}, exampleINPUT.t10a3{iter}, ...
+            exampleINPUT.t10a4{iter});
+        if isequal(A, exampleOUTPUT.t10{iter})
+            display(['iter ', num2str(iter),') ok'])
+        else
+            display(['iter ', num2str(iter),') x'])
+            result = 0;
+        end
+    end
+case 11
+    display('MHSWTrans (Variant 2)')
+    randi('seed',1);
+    result = 1;
+    for iter = 1:20
+        A = MHSWTrans(exampleINPUT.t11a1{iter}, ...
+            exampleINPUT.t11a2{iter}, exampleINPUT.t11a3{iter}, ...
+            exampleINPUT.t11a4{iter});
+        if isequal(A, exampleOUTPUT.t11{iter})
+            display(['iter ', num2str(iter),') ok'])
+        else
+            display(['iter ', num2str(iter),') x'])
+            result = 0;
+        end
+    end
+case 12
+    display('MCMCInference (part 2)')
+    result = 1;
+    randi('seed',1);
+    %for iter = 1:1 % check the comments for a working solution for 2nd iteration
+    for iter = 1:1 % LALS That's how I understand it
+        [M, all_samples] = MCMCInference(exampleINPUT.t12a1{iter},...
+            exampleINPUT.t12a2{iter}, exampleINPUT.t12a3{iter}, ...
+            exampleINPUT.t12a4{iter}, exampleINPUT.t12a5{iter}, ...
+            exampleINPUT.t12a6{iter}, exampleINPUT.t12a7{iter}, ...
+            exampleINPUT.t12a8{iter});
+        if isequal(M, exampleOUTPUT.t12o1{iter}) && ...
+            isequal(all_samples, exampleOUTPUT.t12o2{iter}),
+            display(['iter ', num2str(iter),') ok'])
+        else
+            display(['iter ', num2str(iter),') x'])
+            result = 0;
+        end
+       randi('seed',26288942);
+    end
+
+
+case 13
+     disp ("Assignment question 1")
+        [N,F] = ConstructRandNetwork(.3,.7);
+        M = ComputeApproxMarginalsBP( F,[]);
+     result = 1;
+
+case 14
+    disp("Assignment question 3")
+      disp("    strong correlation")
+      [N, F] = ConstructToyNetwork(1, .2)
+      M = ComputeApproxMarginalsBP(F, 1)
+      disp("    on-diag and off-diag equal")
+      [N, F] = ConstructToyNetwork(.2, 1)
+      M = ComputeApproxMarginalsBP(F, 1)
+      disp("   strong anti-correlation")
+      [N, F] = ConstructToyNetwork(.5,.5)
+      M = ComputeApproxMarginalsBP(F, 1)
+    result = 1
+
+[toy_network, toy_factors] = ConstructToyNetwork(1,0.1);
+ [M, all_samples] = MCMCInference(toy_network, toy_factors, exampleINPUT.t8a3{1}, exampleINPUT.t8a4{1},  exampleINPUT.t8a5{1}, 100, exampleINPUT.t8a7{1}, AA0)
+
+
+VisualizeMCMCMarginals(mat2cell(all_samples, size(all_samples, 1), size(all_samples, 2)), 1:length(G.names), G.card, F, 10, M, 'dummy')
+=======================================================================================================
+
+https://class.coursera.org/pgm/forum/thread?thread_id=1455
+
+Oh, oops. A clique can't send a message at any time, but this function isn't dealing with cliques
+
+. It is dealing with clusters. A cluster can send a message at any time. Sorry for the confusion.
+
+We're looping through the possible messages, sending them off one by one. This function just gets the next message that is to be sent, the mth message.
+
+============================================================================================================
+
+
+https://class.coursera.org/pgm/forum/thread?thread_id=1618
+
+
+
+I found the following two supplementary videos very useful before getting started on PA5... These are not included in the video lectures for this course.
+
+http://openclassroom.stanford.edu/MainFolder/VideoPage.php?course=ProbabilisticGraphicalModels&video=3.12-LoopyBeliefPropagation-MessagePassing&speed=
+
+http://openclassroom.stanford.edu/MainFolder/VideoPage.php?course=ProbabilisticGraphicalModels&video=3.13-LoopyBeliefPropagation-ClusterGraphConstruction&speed=
+
+
+===============================================================================
+
+https://class.coursera.org/pgm/forum/thread?thread_id=1576
+
+Hello,
+
+Yes, in our implementation of SmartGetNextClusters you should expect the same results as NaiveGetNextClusters. The exampleINPUT actually provides three test cases for this particular function. So you should look at exampleOUTPUT.t1{1} when calling NaiveGetNextClusters(exampleINPUT.t1a1,exampleINPUT.t1a2{1}) for the first test case provided, etc.
+
+And you are right about the implementation. There is really nothing smart about it, since it doesn't use any of the ideas we proposed in the description. We should have removed the entire SmartGetNextClusters function.
+
+Thanks, Lo
+
+input
+ [1,1] =  1
+  [1,2] =  5
+  [1,3] =  6391
+
+
+ t1 = 
+    {
+      [1,1] =
+
+         8   1
+
+      [1,2] =
+
+         7   3
+
+      [1,3] =
+
+         9   5
+
+    }
+
+===========================================================
+
+
+=============================================================
+
+I don't know of a profiler for octave (something in Matlab's favor), but something like tic/toc as Alex mentioned would be useful for your purposes. In the context of assignment 5, the transition functions are called very often, so optimizations to their implementation is worth your while.
+
+There are a couple of optimizations you can employ for these types of functions:
+
+    as you mentioned, the normalizing constants in the ratio being calculated will cancel out and therefore you can speed up your code by not calculating them in the first place. Whenever you are calculating a ratio of values that are proportional to the probabilities, normalizing should just be unnecessary computational overhead.
+    You only need to perform your calculations using the factors whose scope includes the variables you are considering transitioning. Since all other variable assignments are given, and constant for our transition calculation they will cancel out.
+    Performing a full FactorProduct is unnecessary. Since we are evaluating a transition between two full joint assignments A and A′, you can just use those assignments as givens and take the product of the relevant entry from the factor's CPD.
+    There are some cases where it is unnecessary to calculate the ratios used to determine the acceptance probability. (It depends on the variant used, and if the old assignments differ from the new ones...) A simple if/else block to avoid the calculation when possible should speed things up because the function is called so often.
+    Vectorize your code. Rewriting your code to use optimized functions may not be conceptually straightforward, but for loops are slow in Matlab and Octave. (Things are especially slow in Octave.) Even if you can't get rid of all for loops, make sure you are nesting any.
+
+Posted by Jonathan Russell (Community TA)
+on Sun 22 Apr 2012 9:32:09 PM PDT 
+=================================
+PA5 Quiz
+
+#1: 
+Loopy BP
+19->3
+iter19to3: 2310s
+
+15->40
+3454s
+
+17->2
+ 2978s
+===========================================================================================
+#3
+Construct Random Network:
+(on_diag_weight, off_diag_weight)   iter          accuracy (compared to exact marginals)
+(0.3,0.7)                            3552
+(1,0.2)                              2400         delta ca 0.03 - 0.06
+(0.2,1)                              slo-o-ow
+(0.5,0.5)                            192           high (essentially identical)
+
+(on_diag_weight, off_diag_weight) 
+Construct Toy Network               iter          accuracy (compared to exact marginals)
+(1,0.2)                             15936        0.4 -0.47 (poor)
+(0.2,1)                             > 100000     0.43 -0.47 (poor)
+(0.5,0.5)                            192         high (essentially identical)
+===================================================================================================
+#4
+
+[toy_network, toy_factors] = ConstructToyNetwork(1.0,0.1);
+ExactM = ComputeExactMarginalsBP(toy_factors, [], 0)
+[M, all_samples] = MCMCInference(toy_network, toy_factors, [],'Gibbs',0, 4000,1, A0);
+samples_list{1}=all_samples;
+VisualizeMCMCMarginals(samples_list, [1],toy_network.card([1]),toy_factors, 200, ExactM, 'Gibbs')
+
+
+Gibbs run with A0=ones, 4000 iters; The marginals quickly reach a state to oscillate around; but it's far from the
+the exact marginal; another run moved to states 2; 3 runs stayed around initial state
+
+Gibbs run with A0=2's, Single 4000 iters run ; samples stay close to initial state for ca 2500 iters; then abruptily
+switch around to state 1's around 2730 iters; another run stays close to the initial state
+
+
+#5
+
+[toy_network, toy_factors] = ConstructToyNetwork(1.0,0.2);
+ExactM = ComputeExactMarginalsBP(toy_factors, [], 0)
+[M, all_samples] = MCMCInference(toy_network, toy_factors, [],'MHSwendsenWang2',0, 4000,1, A0);
+samples_list{1}=all_samples;
+VisualizeMCMCMarginals(samples_list, [1],toy_network.card([1]),toy_factors, 200, ExactM, 'MHSwendsenWang2')
+
+MHSwendsenWang2 mixes quickly oscillates around the exact marginals
+==========================================================================
+
+
+When I said that my code doesn't pass the sample test, I actually meant the second half of it.
+ Yes, I set seed to 1 before the first test.
+
+Now after some hard guesswork I managed to make the second sample test pass by setting the magic number like this:
+
+randi('seed',26288942);
+====================================================
+
+
+rename rand.m to new_rand.m
+
+=======================================================================
+
+I keep looking for more functional capabilities. for example, I wanted to do currying for the last assignment multiple times. Is it really true that sum and prod will cover the scope of a vector, but not an arbitrary binary function? For FactorProduct, I ended up looping over a list, but I wanted something like map(FactorProduct, messages). Can Octave do that?
+

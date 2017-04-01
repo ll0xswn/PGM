@@ -1,0 +1,173 @@
+Since several of you were interested in HMM's and this assignment is out there now, I just wanted to give a high level picture of what this assignment is all about.
+
+ In the 1st part of the assignment, all you do is try to cluster the poses. 
+You can look at VisualizeData after the first part to see what those clusters really look like,
+ but possibly there will be one cluster that looks like people clapping, one cluster that looks like people kicking, and one cluster that looks like people standing still.
+ These clusters are not the same as classifying people clapping, high kicking, and low kicking, they are just clusters of poses that look similar.
+ But what we would really intend to do is to find out if people are clapping, high kicking, or low kicking. 
+So, first what we do is pick up some video of people clapping and kicking, and we record a sequence of poses for each action.
+ This gives us a training data set to work with. Eventually, for a new test point (which consists of a sequence of poses), 
+we will take a guess at to which action it corresponds.
+
+
+ We will do this by looking at the probabililty is a clap, a high-kick, and a low-kick (P(a|c='clap') ,P(a|c='high-kick'), P(a|c='low-kick')), and then taking the maximum. This will be in part 3. Before we can do that though, we need a way of calculating P(a|c).
+
+ This is where part 2 comes in. What we're going to do is send in all of the data that corresponds to a certain action class. 
+
+If you notice, all of the action data in the input for part 2 is for clapping. So, in part 2, we are asking 'Given that the action is clapping, what are the hidden states and the transition probabilities'. 
+So, for clapping, the hidden states might be 1="standing normally", 2 = "arms wide open", and 3="hands together", and clapping is generally of the form "1,2,3,2,3,2,1". It also could be something else, we don't know, these are the hidden states we are trying to learn from the data. After doing this learning for all the action classes, we (hopefully) get a feel for what clapping looks like, but also a feel for what kicking looks like. A sequence of poses that is someone clapping should be pretty likely under the clap model, but be unlikely for the kick model. This way we eventually run the new data point (which is a sequence of poses), run it through each of the models we have learnt and try to classify it as the one which has the highest probability. Hope that helps and Good Luck!!
+
+Posted by Allan Joshua (Community TA)
+on Sat 19 May 2012 8:43:04 PM PDT 
+=====================================================================================================================================
+
+
+If you're interested in finding out about Hierarchical Clustering for the final part of the assignment, I recommend this video of a lecture by Yee Whye Teh at http://videolectures.net/epsrcws08_teh_hc/ It's very nicely presented and includes some sophisticated approaches that might help with not just Better Initializations but also Hidden State Variables and Extending the HMM.
+
+On the same site, I also found this talk on the history of clustering methods quite helpful: http://videolectures.net/ecmlpkdd08_jain_dcyb/
+
+Both of these videos are easy to follow, not excessively technical, but are quite deep nonetheless, and might help in preventing one from using the wrong kind of clustering in RecognizeUnknownActions for the given data.
+Posted by Patrick Tierney (Student)
+on Thu 17 May 2012 4:11:21 AM PDT
+
+
+======================================================================================================================================
+
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2341
+
+Computing of loglikelihood becomes really easy if you will build L calibrated trees and take from each tree only one clique (say, clique(1) ) applying to it logsumexp.
+
+Thank you Joel for the comment about not normalizing the logEmissionProb values! I had tried both normalized and unnormalized before coding loglikelihhood and stayed with normalized because the numerical errors were less on the output structures. But later I was losing my mind trying to come even vaguely close to the expected loglikelihoods. As soon as I commented out the normalization I got the correct answers. Cheers.
+Posted by Patrick Tierney (Student)
+
+
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2529
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2402
+
+Hi,
+
+For each of the actions, one bayesian network should represent all the factors included in the first equation of section 4.1.
+ To get the log likelihood log P(P_1,... P_m) for the observed variables, 
+you need to marginalize out all the hidden variables. 
+The clique tree function will give you log P(P_1,... P_m, S_i, S_i+1) as the unnormalized potential of a clique i
+ (any arbitrary clique would work). Then, you are almost there, you just need to marginalize out S_i and S_i+1...
+
+Do it for each action. Since each action is independent from the other, the log likelihood of each action can be summed.
+
+Good luck, Vivien
+
+PS: please note that the emission probabilities P(P_i|S_i) are not probabilities over S_i.
+ Therefore, when you build your network, the emission probabilities should not be normalized.
+
+PS2: the variables P_i don't need to appear in the network because they are observed.
+Posted by Vivien Tran-Thien (Student)
+
+
+Hi,
+
+you have to find the probabilities for every initial state (for each action) and add them. Then normalize your values. You can find actions in actionData structure. For every action you have to find a corresponding row in ClassProb
+
+====================================================================================================================================
+
+[P loglikelihood ClassProb] = EM_cluster(exampleINPUT.t1a1, exampleINPUT.t1a2,exampleINPUT.t1a3, exampleINPUT.t1a4);
+
+ assert(P,exampleOUTPUT.t1a1,3.0e-04)
+ assert(loglikelihood,exampleOUTPUT.t1a2,7.0e-04)
+ assert(ClassProb,exampleOUTPUT.t1a3,4.0e-06)
+=============================================================================================================================
+
+[P loglikelihood ClassProb PairProb] = EM_HMM(actionData, poseData, G, InitialClassProb, InitialPairProb, maxIter)
+
+=================================================================================================================
+
+
+[P loglikelihood ClassProb PairProb] = EM_HMM(exampleINPUT.t2a1, exampleINPUT.t2a2, exampleINPUT.t2a3, exampleINPUT.t2a4, exampleINPUT.t2a5, exampleINPUT.t2a6);
+ assert(P,exampleOUTPUT.t2a1,1e-3);
+ assert(ClassProb,exampleOUTPUT.t2a3,1e-5);
+ assert(PairProb,exampleOUTPUT.t2a4,1e-5); 
+ assert(loglikelihood,exampleOUTPUT.t2a2,1e-3); 
+ disp('Success!');
+ case 3 % EM_HMM - first iteration
+ [P loglikelihood ClassProb PairProb] = EM_HMM(exampleINPUT.t2a1, exampleINPUT.t2a2, exampleINPUT.t2a3, exampleINPUT.t2a4, exampleINPUT.t2a5, 1);
+
+ assert(P,exampleOUTPUT.t2a1b,1e-7);
+ assert(ClassProb,exampleOUTPUT.t2a3b,1.0e-06);
+ assert(loglikelihood,exampleOUTPUT.t2a2b,0.001);
+ assert(PairProb,exampleOUTPUT.t2a4b,1e-6)
+
+
+% switch around the transition factor var ordering
+%assert(ClassProb,exampleOUTPUT.t2a3b,0.006);
+ %assert(loglikelihood,exampleOUTPUT.t2a2b,0.02);
+
+%Alicja
+%assert(P,exampleOUTPUT.t2a1b,1e-3);
+% assert(ClassProb,exampleOUTPUT.t2a3b,1e-5);
+ %assert(PairProb,exampleOUTPUT.t2a4b,1e-5); 
+% assert(loglikelihood,exampleOUTPUT.t2a2b,1e-3);
+
+===========================================================================================
+
+
+
+DataSetTrain1/Test1: 82% accuracy
+nData =  90
+nCorrect =  74
+
+DataSetTrain1/Test1: Uniform Initial Class Distribution does not change accuracy
+nData =  90
+nCorrect =  74
+
+DataSetTrain1/Test1: Initial Class Distribution from clustering
+nData =  90
+nCorrect =  74
+
+DataSetTrain1/Test1: Uniform Initial Class Distribution with 4 states and uniform trainsition distribution:
+nData =  90
+nCorrect =  72
+
+DataSetTrain1/Test1: Initial Class Distribution from clustering starting with uniform initial class distribution
+nData =  90
+nCorrect =  72
+========================================
+DataSetTrain2/Test2: 73% accuracy
+nData =  90
+nCorrect =  66
+Elapsed time is 271 seconds.
+
+
+
+DataSetTrain2/Test2: 83% accuracy with clustering starting with  uniform distribution of init prob
+nData =  90
+nCorrect =  75
+Elapsed time is 633 seconds.
+
+
+DataSetTrain2/Test2: 83% accuracy with uniform distribution init class prob
+nData =  90
+nCorrect =  75
+Elapsed time is 272 seconds.
+
+
+===============================================================================
+
+DataSetTrain3/Test3 - training with 18 trains data; validation with 12 test data
+nCorrect =  33
+nData =  36
+
+
+DataSetTrain3/Test3 - training with 18 trains data; validation with 12 test data
+Uniform initial class distribution
+nCorrect =  36
+nData =  36
+
+============================================================
+
+DatasetTrain3: K=3: Orig Init class prob and Init Pair Prob
+
+
+
+

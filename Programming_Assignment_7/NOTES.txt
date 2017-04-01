@@ -1,0 +1,50 @@
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2035
+
+
+Imho the problem of building of CliqueTree is artificially complicated. My approach was:
+
+    Build factors from features, where factor.var = feature.var; card = 26 for each var; val = exp(theta(paramIdx))
+    Use CreateCliqueTree
+    Use CliqueTreeCalibrate
+
+Posted by Alexander Kucherenko (Student)
+
+==================================================================================
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2149
+
+Hi Anon. We're calculating an expectation. We do that by taking the probability of each individual result for the feature count and summing up.
+
+In our particular case, the probabilities are the results from our calibration of the tree, which is to say, for a three-letter word, P(letter 1), P(letter 2), P(letter 3), P(letter 1, letter 2) and P(letter 2, letter 3). Those are the five probability distributions we want, assuming our word is three letters long. For longer words, we have more distributions.
+
+We have a list of features. Each feature has variables (either one or two) and their assignments. There will be some features (off the top of my head, 33 of them) whose variable is 1 and whose value is 5, which corresponds with letter E. Those are the features for the first letter of the word being E. These features match the probability we computed in the last paragraph, 1/10, the probability that the first letter is E.
+
+For each item in the feature list, we're going to sum the probability that it's true (which we get from the calibrated tree). That will be part of the expectation. Notice that we're sharing parameters, so that we have to accumulate this sum, this expectation, for each theta value. For example, consider the expectation that governs the letter being E and the first pixel being white: we'll be adding up P(first letter E)) + P(second letter E) + P(third letter E). That will be our expectation of theta(letter E & first pixel white).
+
+Note that the work about the color of pixels has been done for us. For each feature, we just have to look at the variable assignment for that feature; we don't have to know, and can't know, exactly what pixel we're modelling. We just add up the various probabilities , and put that in the right place in the expectation list.
+==============================================================================
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2084
+
+==============================================================
+
+LALS:
+
+
+Training the full model: slow.
+
+Optimizng theta with 220 data instances and 5 passes over the data: 
+
+Accuracy on training data:
+
+charAcc =  0.77273
+wAcc =  0.51818
+
+Accuracy on test data:
+
+charAcc =  0.61667
+wAcc =  0.27500
+
+
+

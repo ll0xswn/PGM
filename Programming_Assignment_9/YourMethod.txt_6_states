@@ -1,0 +1,4 @@
+Describe your method used to recognize the unknown actions here.
+
+Set the number of hidden state assignments to 6.
+Uniform distribution of initial class probabilities and transition probabilities.

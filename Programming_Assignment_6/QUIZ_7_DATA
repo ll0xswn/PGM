@@ -1,0 +1,121 @@
+
+load 'TestI0.mat';
+[meu00 optdr00] = OptimizeWithJointUtility(TestI0);
+[meu01 optdr01] = OptimizeLinearExpectations(TestI0);
+
+assert(meu00==meu01)
+assert(optdr00.val==optdr01.val)
+
+TestI1=TestI0;
+TestI1.DecisionFactors.var=[9 11]
+TestI1.DecisionFactors.card=[2 2]
+TestI1.DecisionFactors.val=[1 0 0 1]
+
+[meu10 optdr10] = OptimizeWithJointUtility(TestI1);
+[meu11 optdr11] = OptimizeLinearExpectations(TestI1);
+
+assert(abs(meu10 -meu11) < 1.0e-06)
+assert(optdr10.val==optdr11.val)
+
+
+
+TestI2=TestI1;
+TestI2.RandomFactors(10).val=[0.999  0.001 0.25  0.75];
+
+[meu20 optdr20] = OptimizeWithJointUtility(TestI2);
+[meu21 optdr21] = OptimizeLinearExpectations(TestI2);
+
+assert(abs(meu20 -meu21) < 1.0e-06)
+assert(optdr20.val==optdr21.val)
+
+
+TestI3=TestI1;
+TestI3.RandomFactors(10).val=[0.999  0.001  0.001 0.999];
+
+[meu30 optdr30] = OptimizeWithJointUtility(TestI3);
+[meu31 optdr31] = OptimizeLinearExpectations(TestI3);
+
+assert(abs(meu30 -meu31) < 1.0e-06)
+assert(optdr30.val==optdr31.val)
+
+================================
+
+BaseLine:
+
+meu = -350.43
+optdr =
+
+  scalar structure containing the fields:
+
+    var =  9
+    card =  2
+    val =
+
+       0   1
+
+==========================================
+Test1 Sens: 99% Specif 75%
+
+meu10 =  155.17
+optdr10 =
+
+  scalar structure containing the fields:
+
+    var =
+
+        9   11
+
+    card =
+
+       2   2
+
+    val =
+
+       1   0   0   1
+
+
+===================================
+Test2
+
+meu20 = -216.46
+optdr20 =
+
+  scalar structure containing the fields:
+
+    var =
+
+        9   11
+
+    card =
+
+       2   2
+
+    val =
+
+       1   0   0   1
+
+==============================================================
+
+
+Test3
+
+meu30 =  323.75
+octave:475> optdr30
+optdr30 =
+
+  scalar structure containing the fields:
+
+    var =
+
+        9   11
+
+    card =
+
+       2   2
+
+    val =
+
+       1   0   0   1
+
+
+

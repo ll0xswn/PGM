@@ -1,0 +1,57 @@
+https://class.coursera.org/pgm/forum/thread?thread_id=2283
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2206
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2273
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2278
+
+https://class.coursera.org/pgm/forum/thread?thread_id=2247
+
+
+=======================================================================================================================
+
+Some additional questions relating to the model specification.
+
+1) In ComputeLogLikelihood.m, we're supposed to handle the case where G is 3-dimensional, where the last dimension runs over the K possible labels for C. But are we meant to handle just this possibility with K=2, or for any value of K? I know the assignment only has K=2, but we might add turtles or dogs, etc.
+
+2) In general, what quantities relating to the model are constants and what are variable? Is the structure being 10x3 fixed?
+
+3) Are we guaranteed that the structure is a tree and not a forest?
+
+4) If the answer to 3) is a tree, then are we guaranteed that the "head" (ie the unique O that is only conditioned by C) is found in the first row of G? Are we also certain that a child node's index is always greater than its parent's?
+
+5) In section 2.3 where the equations 1-4 are stated, it also says that the "class label C is always observed in the training data". But in the context of ComputeLogLikelihood, it does not appear to be in any of the arguments P, G, or dataset. Did I just miss it?
+
+Presumably we don't need it here, but I don't understand why not. Why don't we need sufficient statistics (in terms of C) to compute the likelihood here?
+
+Thanks in advance.
+Posted by Patrick Tierney (Student)
+on Tue 8 May 2012 4:26:22 PM PDT 
+
+Hello Patrick,
+
+1) In this programming assignment you will only deal with dataset that has K=2, but it is a good programming practice not to hardcode that and make your code as general as possible. 2) The data structure is fixed, including the 10x3 representation of body pose. The content the data structure hold may vary. 3) Yes, the skeletal structure is always a tree, otherwise it is a little bit creepy. 4) This shouldn't be a concern since you can always you can always look at G(i,1) to distinguish the head and the rest, and G(i,2) to find the parent node. 5) We have updated the description. Please see the pinned thread at the top of the forum.
+
+Thanks, Louis
+Posted by Louis Chen (Staff)
+on Tue 8 May 2012 5:41:17 PM PDT 
+=======================================================================================================
+
+To recapitulate previous posts (e.g. Zhang Xuan's), equation (13) in the programming assignment #8 document is wrong. It does not take into account the different classes (human or alien). Moreover, the different P(Oi|Op(i)) are not independent, they are only conditionally independent given the class. Therefore, the right equation is
+
+P(O1,…,O10)=∑kP(C=k)∗∏i=110P(Oi|Op(i),C=k)
+
+Implementing this I got the required result submitting part 3. A little more specifically, I first looped over examples, then initiated an array of log-probs for cases using the priors, and then went over cases and body parts to include the conditional probabilities in this array; then I summed this array in log-space, and added the log-prob to the likelihhod.
+
+This is the right place to take the cases into account as each example has its own class, and therefore the examples are indeed independent. The different body parts share the same class, so the prior should not be used at the P(Oi|Op(i)) level. If, on the other hand, we knew that all examples come from the same class, the summation over classes should have been at eq. (12), because then the examples wouldn't have been independent, only conditionally independent given C.
+Posted by Ehud Schreiber (Student)
+on Tue 8 May 2012 1:57:03 AM PD
+
+
+
+
+
+
+
+

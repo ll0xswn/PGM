@@ -1,0 +1,84 @@
+https://class.coursera.org/pgm/forum/thread?thread_id=1271
+
+Ordering for assigning factors to cliques in ComputeInitialPotentials. The order of assignment of factors to cliques should happen in the order cliques are given to you at the end of the CreateCliqueTree function. Each factor should be assigned to the first clique that contains the variables in the factor, where ordering of the cliques is given in C.nodes (C is the argument for ComputeInitialPotential function).
+
+For example: in function ComputeInitialPotentials, the argument C has a field nodes. Now let's say the contents of C.nodes are:
+
+C.nodes{1} = [1 2]
+
+C.nodes{2} = [2 3]
+
+And your factors are [1], [2], [3]. So [1] and [2] should be assigned to the 1st clique. Even though [2] can be assigned to the second clique, for the purpose of this assignment we are going to assign [2] to the first clique that contains it.
+
+Order of Variables in Cliques. You should use CliqueTree.nodes{} to get the ordering for your variables and those nodes are in numerical order.
+
+Empty cliques. It is possible that you may end up with cliques with no factors assigned to them. If that is the case, set the initial potential to 1 for all variable assignments for that clique.
+
+CliqueTreeCalibrate (for max-sum) If you are having problems with this part, but your code is otherwise correct for sum-product message passing, make sure that your FactorMaxMarginalization works properly with logspace-potentials.
+
+Clique Potentials If you have a clique over variables [1 2 3] with only one factor assigned to it, say [1], then you should assume that there's an initial potential over [1 2 3] with all 1s and multiply it.
+
+This is the implementation we have and it doesn't really affect the answer because you will end up multiplying stuff about all your variables in the clique. If a variable does not appear in any factor, then it shouldn't be in any clique. However, if a variable is in a clique and just that the factors assigned to the clique don't contain the variable then there must be some other clique that contains that variable, and to which the factor is assigned. By running intersection property that variable has to be in the sepset so you will get messages for it.
+
+
+Thanks a lot! It clarified several things for me. However, when you mention empty cliques, apart from the initial potential set to 1: what variable (I mean, field .var) should we put? Zero? An empty vector []? And the cardinality? Because this has an effect on the amount of values (all ones, as you said).
+Posted by Fernando Garcia-Garcia (Student)
+
+
+Lets say you have clique 1 which has var A,B,C,D. Create a factor which has these vars A,B,C,D and then based on the appropriate cardinality set all the .vals to 1. Now then based on the factors you have, drop them into the appropriate cliques and perform factor product? That helps?
+Posted by Allan Joshua (Community TA)
+
+
+
+
+Also, <B>for the purpose of this assignment we are going to assign [2] to the first clique that contains it</B> Lets say when you do this, even after assigning all the factors you end up with one clique which did not get any assignments because the factors were assigned to some other clique, then you should just take the vars on that clique and initialize the .vals to all 1's. Don't need to worry about any empty vector. Hope that clears things up.
+Posted by Allan Joshua (Community TA)
+
+Yes, both of your comments helped a lot. Thanks!
+Posted by Fernando Garcia-Garcia (Student)
+
+Sorry, not completely clear... In the following code:
+
+C.nodes{1} = [1 2]
+
+The [1 2] refers to factor numbers (C.factorList(1) and C.factorList(2)) or variable numbers?
+
+P.S. Some people say it's variables, but in this case if the factors to multiply contain other variables, then they would need to be summed out. So I am leaning towards the idea that these [1 2] represent factor numbers, do they?
+Posted by Andrey Kuzmenko (Student)
+
+Ah I see, factor cannot be assigned to a clique, if the clique does not contain all its variables... Clarified by myself for myself now :)
+Posted by Andrey Kuzmenko (Student)
+
+
+I'm pretty sure C.nodes{1}=[1 2] means that the 1st clique node contains the Variables X1,X2, not that the factors ϕ1,ϕ2 get assigned to clique C
+
+==============================================================================
+
+In the lecture, Daphne said that in the step to define Initial Potentials I must choose a Cluster to assign each factor.
+
+So, for the InitPotential.INPUT.factorList(1) I can assign to InitPotential.INPUT.nodes{1} or InitPotential.INPUT.nodes{7} or InitPotential.INPUT.nodes{8}.
+
+Checking the RESULT I realized that InitPotential.INPUT.factorList(1) was assigned for InitPotential.INPUT.nodes{7}, so if I decide to assign to another cluster I will get a different RESULT. Will my code be refused at submit process ? What rule use to decide which node assign ?
+
+Regards.
+
+
+Well, Actually you can assign it to any of the two but for the purposes of this assignment you can assign it to the first clique you encounter in incremental order. hope that helps.
+Posted by Allan Joshua (Community TA)
+on Mon 9 Apr 2012 1:58:01 PM PDT 
+
+=====================================================================
+
+
+Both variable elimination and the clique tree algorithm are trying to avoid the construction of the full factor product 
+(and the reason why we want to avoid the full factor product is, as Jason rightly points out,
+ the fact that the size of the full factor can easily be very, very huge);
+ the main advantage of clique tree belief propagation over variable elimination is that
+a calibrated clique tree can be reused for a wide variety of queries while a variable elimination 
+run is essentially a once-off. In a calibrated clique tree, the clique beliefs βi(Ci) are correct 
+unnormalized marginals. Queries that only involve variables that appear together in a clique can 
+therefore be answered very cheaply; also queries that involve more than one clique can potentially 
+still be reasonably cheap. In essence, the benefit of the clique tree algorithm is that you are 
+paying twice the cost of variable elimination, but that you are then able to answer a whole lot
+ of queries very cheaply (instead of having to run variable elimination over and over again for each query).
+

@@ -1,0 +1,1026 @@
+    1 ComputeSingletonFactors(Part1SampleImagesInput,imageModel)
+    2 length(Part1SampleImagesInput)
+    3 ComputeSingletonFactors(Part1SampleImagesInput,imageModel)
+    4 ComputeSingletonFactors(Part1SampleImagesInput,imageModel)
+    5 whos
+    6 Part1SampleFactorsOutput
+    7 Part1SampleFactorsOutput(1)
+    8 whos
+    9 P1F = ComputeSingletonFactors(Part1SampleImagesInput,imageModel);
+   10 length(P1F)
+   11 length(Part1SampleFactorsOutput)
+   12 PF1 == Part1SampleFactorsOutput
+   13 PF1(1) == Part1SampleFactorsOutput(1)
+   14 P1F == Part1SampleFactorsOutput
+   15 P1F(1) == Part1SampleFactorsOutput(1)
+   16 P1F(1).var == Part1SampleFactorsOutput(1).var
+   17 P1F(1).card == Part1SampleFactorsOutput(1).card
+   18 P1F(1).val == Part1SampleFactorsOutput(1).val
+   19 (P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.01
+   20 (P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.00000000000001
+   21 (P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.00000000000000000000001
+   22 (P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.000001
+   23 sum((P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.000001)
+   24 for i=1:5 sum((P1F(i).val -Part1SampleFactorsOutput(i).val) < 0.000001))
+   25 for i=1:5 sum((P1F(i).val -Part1SampleFactorsOutput(i).val) < 0.000001) end
+   26 for i=1:5 (P1F(i).val -Part1SampleFactorsOutput(i).val) < 0.000001 end
+   27 for i=1:5 (P1F(i).val - Part1SampleFactorsOutput(i).val) < 0.000001 end
+   28 for i=1:5 (P1F(i).val - Part1SampleFactorsOutput(i).val) < 0.000001) end
+   29 for i=1:5 (P1F(i).val - Part1SampleFactorsOutput(i).val) < 0.000001 end
+   30 (P1F(1).val -Part1SampleFactorsOutput(1).val) < 0.000001
+   31 for i=1:5 (P1F(i).val -Part1SampleFactorsOutput(i).val) < 0.000001 end
+   32 for i=1:5 i end
+   33 for i=1:5 P1F(i).val end
+   34 for i=1:5 (P1F(i).val - Part1SampleFactorsOutput(i).val)  end
+   35 for i=1:5 Part1SampleFactorsOutput(i).val  end
+   36 for i=1:5 P1F(i).val - Part1SampleFactorsOutput(i).val  end
+   37 for i=1:5 (P1F(i).val - Part1SampleFactorsOutput(i).val)  end
+   38 for i=1:5 P1F(i).val - Part1SampleFactorsOutput(i).val < 0.0001 end
+   39                                 
+   40 for i=1:5 P1F(i).val - Part1SampleFactorsOutput(i).val < 0.000001 end
+   41                history
+   42 for i=1:5 sum(P1F(i).val - Part1SampleFactorsOutput(i).val < 0.000001) end
+   43 sum(P1F(2).val - Part1SampleFactorsOutput(2).val < 0.000001)
+   44 sum(P1F(3).val - Part1SampleFactorsOutput(3).val < 0.000001)
+   45 sum(P1F(4).val - Part1SampleFactorsOutput(4).val < 0.000001)
+   46 sum(P1F(5).val - Part1SampleFactorsOutput(5).val < 0.000001)
+   47 P1F(5).val - Part1SampleFactorsOutput(5).val < 0.000001
+   48 length(P1F(5).val) == length(Part1SampleFactorsOutput(5).val)
+   49 Part1SampleFactorsOutput(5).card
+   50 P1F(5).card
+   51 submit
+   52 1
+   53 lalpbsw@gmail.com
+   54 7eFpvhA4X8
+   55 [charAcc, wordAcc] = ScoreModel(allWords, imageModel, [], []);
+   56 more inf.log
+   57 ls -l
+   58 ls-l *.log
+   59 ls -l *.log
+   60 ks -k
+   61 whos
+   62 Part2SampleImagesInput 
+   63 Part2SampleImagesInput(2)
+   64 Part2SampleFactorsOutput
+   65 Part2SampleFactorsOutput(1)
+   66 Part2SampleFactorsOutput(2)
+   67 Part2SampleFactorsOutput(3)
+   68 Part2SampleFactorsOutput(4)
+   69 history
+   70             
+   71 whos
+   72 ComputeEqualPairwiseFactors (Part2SampleImagesInput, imageModel.K)
+   73 ComputeEqualPairwiseFactors (Part2SampleImagesInput, imageModel.K)
+   74                history
+   75 ComputeEqualPairwiseFactors (Part2SampleImagesInput, imageModel.K)
+   76 F2 = ComputeEqualPairwiseFactors (Part2SampleImagesInput, imageModel.K)
+   77 F2(1)
+   78 whos
+   79 pairwiseModel
+   80 whos
+   81  Part2SampleFactorsOutput(1).val
+   82 length( Part2SampleFactorsOutput(1).val)
+   83 Part2SampleFactorsOutput(1).var
+   84 Part2SampleFactorsOutput(1).card
+   85 F2(1).card
+   86 F2(1).var
+   87 length( F2(1).val)
+   88 F2(1).val
+   89 whos
+   90 Part2SampleImagesInput
+   91 Part2SampleImagesInput(1)
+   92 char(64+20)
+   93 Part2SampleImagesInput.groudTruth
+   94 Part2SampleImagesInput.groundTruth
+   95 char(64 + Part2SampleImagesInput.groundTruth)
+   96 char([64 64 64 64 64] + Part2SampleImagesInput.groundTruth)
+   97 char(64 + Part2SampleImagesInput(1).groundTruth)
+   98 char(64 + Part2SampleImagesInput(2).groundTruth)
+   99 char(64 + Part2SampleImagesInput(3).groundTruth)
+  100 char(64 + Part2SampleImagesInput(4).groundTruth)
+  101 char(64 + Part2SampleImagesInput(5).groundTruth)
+  102 pairwiseMode
+  103 pairwiseModel
+  104 whos
+  105 imageModel
+  106 imageModel.params
+  107 length(imageModel.params)
+  108 whos
+  109 computePairwiseFactors(images, pairwiseModel, imageModel.K)
+  110 computePairwiseFactors(Part2SampleImagesInput, pairwiseModel, imageModel.K)
+  111 computePairwiseFactors(Part2SampleImagesInput, pairwiseModel, imageModel.K)
+  112 ComputePairwiseFactors(Part2SampleImagesInput, pairwiseModel, imageModel.K)
+  113 ComputePairwiseFactors(Part2SampleImagesInput, pairwiseModel, imageModel.K)
+  114 whos
+  115 Part2SampleFactorsOutput(1).va
+  116 Part2SampleFactorsOutput(1).val(1)
+  117 Part2SampleFactorsOutput(2).val(1)
+  118 Part2SampleFactorsOutput(3).val(1)
+  119 Part2SampleFactorsOutput(4).val(1)
+  120 Part2SampleFactorsOutput(4).val(676)
+  121 Part2SampleFactorsOutput(3).val(676)
+  122 Part2SampleFactorsOutput(4).val(676)
+  123 length(pairWiseModel)
+  124 length(pairWiseModel.params)
+  125 length(pairwiseModel.params)
+  126 length(pairwiseModel)
+  127 size(pairwiseModel)
+  128 pairwiseModel(26,26)
+  129 pairwiseModel(26,25)
+  130 Part2SampleFactorsOutput(4).val(675)
+  131 Part2SampleFactorsOutput(4).val(674)
+  132 Part2SampleFactorsOutput(4).val(1)
+  133 pairwiseModel(1,1)
+  134 pairwiseModel(1,2)
+  135 Part2SampleFactorsOutput(4).val(2)
+  136 pairwiseModel(2,1)
+  137 pairwiseModel(3,1)
+  138 Part2SampleFactorsOutput(4).val(3)
+  139 AA=[1 2 3 4; 5 6 7 8; 9 10 11 12; 13 14 15 16]
+  140 BB=zeros(16,1)
+  141 BB = AA
+  142 reshape(AA, 16, 1)
+  143 F3 = ComputePairwiseFactors(Part2SampleImagesInput, pairwiseModel, imageModel.K)
+  144 F3(1).var
+  145 F3(2).var
+  146 F3(3).var
+  147 F3(4).var
+  148 whos
+  149 Part2SampleFactorsOutput(1).val == F3(1).val
+  150                history
+  151               length(Part2SampleFactorsOutput(1).val) == length(F3(1).val)
+  152             sum(Part2SampleFactorsOutput(1).val == F3(1).val)
+  153             sum(Part2SampleFactorsOutput(2).val == F3(2).val)
+  154             sum(Part2SampleFactorsOutput(3).val == F3(3).val)
+  155             sum(Part2SampleFactorsOutput(4).val == F3(4).val)
+  156 Part2SampleFactorsOutput(3).var
+  157 F3(3).var
+  158 F3(3).card
+  159 Part2SampleFactorsOutput(3).card
+  160 Part2SampleFactorsOutput(4).card
+  161 submit
+  162 2
+  163 y
+  164 whos
+  165 Part3SampleFactorsOutput(1)
+  166 size(Part3SampleFactorsOutput(1).val)
+  167 whos
+  168 tripletList
+  169 tripletList(1_
+  170 tripletList(1)
+  171 char(64+22)
+  172 char(64+4)
+  173 char(64+`)
+  174 char(64+1)
+  175 tripletList == 11.5542
+  176 tripletList(1)
+  177 tripletList(1).factorVal
+  178 tripletList.FactorVal == 11.5542
+  179 tripletList.factorVal == 11.5542
+  180 whos
+  181 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  182 FTR(1)
+  183 whois
+  184 shos
+  185 whos
+  186 Part3SampleFactorsOutput(1)
+  187 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  188 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  189 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  190 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  191 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  192 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  193 FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  194 AssignmentToIndex([22 26], 26)
+  195 whos
+  196 tripletList(1)
+  197 tripleList.chars
+  198 tripletList.chars
+  199 CC = tripletList.chars
+  200 CC = tripletList(1:end).chars
+  201 tripletList(1:end).chars
+  202 tripletList(1:end).chars
+  203 CC = tripletList(1:end).chars;
+  204 CC
+  205 CC = tripletList(1:end).chars;
+  206 tripletList(1:end).chars
+  207 AssignmentToIndex([22 26], 26)
+  208 AssignmentToIndex([22 26], [26 26])
+  209 AssignmentToIndex(22, [26 26])
+  210 AssignmentToIndex([2 22], [26 26])
+  211 ind = AssignmentToIndex([2 22], [26 26])
+  212 ind = AssignmentToIndex([1 1], [26 26])
+  213 ind = AssignmentToIndex([1 2], [26 26])
+  214 ind = AssignmentToIndex([22 1], [26 26])
+  215 ind = AssignmentToIndex([22 4], [26 26])
+  216 ind = AssignmentToIndex([22 4 1], [26 26 26])
+  217 ind = AssignmentToIndex([22 4 4], [26 26 26])
+  218 ind = AssignmentToIndex([22 4 2], [26 26 26])
+  219 ind = AssignmentToIndex([22 4 1], [26 26 26])
+  220 ind = AssignmentToIndex([22 4 1; 22 4 2], [26 26 26])
+  221 whos
+  222 tripletList(1).cars
+  223 tripletList(1).chars
+  224 tripletList.chars
+  225 tripletList.chars
+  226 tripletList.chars
+  227 [tripletList.chars]
+  228 deal(tripletList.chars)
+  229 tripletList.chars
+  230 CC =tripletList.chars
+  231 CC
+  232 CC =find(tripletList.chars)
+  233 CC =find(tripletList(1).chars)
+  234 find(tripletList(1).chars)
+  235 length(tripletList)
+  236 history
+  237 AssignmentToIndex(tripletList(1:3).chars, [26 26 26])
+  238 AssignmentToIndex(tripletList(1).chars, [26 26 26])
+  239 AssignmentToIndex(tripletList(2).chars, [26 26 26])
+  240 [tripletList.chars]
+  241 [tripletList.chars, 2000, 1]
+  242 history
+  243               tripletList(1:3).chars
+  244               tripletList(:).chars
+  245               [tripletList(:).chars]
+  246 history
+  247               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  248 tripletValIndexes
+  249               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  250               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  251               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  252               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  253 whos
+  254  Part3SampleFactorsOutput(1)
+  255  Part3SampleFactorsOutput(1.val) !=1
+  256  Part3SampleFactorsOutput(1.val) > 11
+  257  Part3SampleFactorsOutput(1.val) > 1
+  258  Part3SampleFactorsOutput(1).val > 1
+  259 [ind] = ( Part3SampleFactorsOutput(1).val > 1)
+  260 [ind] = ( Part3SampleFactorsOutput(1).val > 1)
+  261 [ind] = find( Part3SampleFactorsOutput(1).val > 1)
+  262 Part3SampleFactorsOutput(1).val
+  263 tripletList.chars
+  264 tripletList.chars 
+  265 tripletList(1)
+  266               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  267               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  268               FTR = ComputeTripletFactors (Part2SampleImagesInput, tripletList, imageModel.K)
+  269  AA=[1 2 3 4 5 6 7 8 9 10]
+  270 II=[10 9 2 4 3 6 6]
+  271 TT=zeros(10,1)
+  272 TT=zeros(6,1)
+  273 size*II)
+  274 size*(II)
+  275 size(II)
+  276 TT=zeros(7,1)
+  277 TT(II)
+  278 TT
+  279 II
+  280 II(1) = 2
+  281 II(2)=7
+  282 TT(II)
+  283 AA
+  284 TT(II)=AA(1:length(II))
+  285 II
+  286 II
+  287 length(TT)
+  288 TT=zeros(7,1)
+  289 II =[ 2 4 6 8 10 3 5]
+  290 TT
+  291 TT(II)=AA(1:length(II))
+  292 TT=zeros(7,1)
+  293 TT(II)=111
+  294 AA=[1 2 3 4 5 6]
+  295 TT=zeros(10,1)
+  296 II
+  297 II=[2 3 6 8]
+  298 TT(II)
+  299 TT(II)=AA(1:length(II))
+  300 history
+  301                FTR = ComputeTripletFactors (Part3SampleImagesInput, tripletList, imageModel.K)
+  302 tripletList(1)
+  303                FTR = ComputeTripletFactors (Part3SampleImagesInput, tripletList, imageModel.K)
+  304 FTR(1).val
+  305 whos
+  306 FTR(1).val == Part3SampleFactorsOutput(1).val
+  307                FTR = ComputeTripletFactors (Part3SampleImagesInput, tripletList, imageModel.K)
+  308 FTR(1).val == Part3SampleFactorsOutput(1).val
+  309 sum(FTR(1).val == Part3SampleFactorsOutput(1).val)
+  310 sum(FTR(2).val == Part3SampleFactorsOutput(2).val)
+  311 sum(FTR(3).val == Part3SampleFactorsOutput(3).val)
+  312 Part3SampleFactorsOutput(3).val
+  313 FTR(3).val
+  314 Part3SampleFactorsOutput(3).val
+  315 FTR(3).val
+  316 Part3SampleFactorsOutput(1).val
+  317 submit
+  318 3
+  319 y
+  320 submit
+  321 3
+  322 y
+  323 submit
+  324 1
+  325 y
+  326 whos
+  327 Part4SampleFactorOutput
+  328 Part4SampleFactorOutput
+  329 whos
+  330 Part4SampleImagesInput 
+  331 Part4SampleImagesInput (1)
+  332 Part4SampleImagesInput(1)
+  333 Part4SampleFactorOutput
+  334 Part4SampleFactorOutput
+  335         
+  336 AA
+  337 whos
+  338 BB
+  339 diag(BB)
+  340 diag(BB)=0
+  341 BB
+  342  DD+diag(BB)
+  343  DD=diag(BB)
+  344 BB
+  345 diag(BB)
+  346 BB
+  347 diag(BB)
+  348 AA
+  349 BB
+  350 diag(BB)
+  351 LL=BB
+  352 diag(LL)
+  353 size(LL)
+  354 DD=diag(LL)
+  355 LL=[2 4 6 8;
+  356 10 12 14 16;
+  357 18 20 22 24]
+  358 DD=diag(LL)
+  359 LL=LL; 26 28 30 32]
+  360 LL=[LL; 26 28 30 32]
+  361 DD=diag(LL)
+  362 LL(11)
+  363 LL(22)
+  364 LL(2,2)
+  365 LL(1,1)
+  366 LL(3,3)
+  367 LL(4,4)
+  368 diagonal(LL)
+  369 man diag
+  370 help diag
+  371 MM=[1   4   7
+  372    2   5   8
+  373    3   6   9
+  374 ;
+  375 M=[1 4 7; 2 5 8 ; 3 6 9]
+  376 diag(MM)
+  377 diag(M)
+  378 sum(diag(M))
+  379 exit
+  380 # Octave 3.4.3, Sun Apr 08 16:46:17 2012 EDT <lals@lals-desktop>
+  381 version
+  382 whos
+  383 clear
+  384 load('PA3Data.mat
+  385 load('PA3Data.mat');
+  386 load('PA3Models.mat
+  387 load('PA3Models.mat');
+  388 whos
+  389 PA3SampleCases.mat
+  390 load('PA3SampleCases.mat');
+  391 whos
+  392 MM=[ 12 3 ; 4 56 ; 7 8 9]
+  393 MM=[ 1 2 3 ; 4 5 6 ; 7 8 9]
+  394 diag(MM)
+  395 diag(MM)
+  396 DD=diag(MM)
+  397 DD=diag(MM)=4.4
+  398 MM
+  399 help diag
+  400 MM
+  401 diag(MM)
+  402 whos
+  403 ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2)
+  404 Part4SampleFactorOutput
+  405 MM
+  406 diag(MM)
+  407 DD=[ 5 5 5 5]
+  408 diag(DD)
+  409 SS=[5 5 5 5]
+  410 help diag
+  411 diag(SS)
+  412 diag
+  413 diag1
+  414 diag(SS)
+  415 history
+  416               diag(MM)
+  417 diag(SS)
+  418 eye(5)
+  419 eye(5)*4
+  420 eye(5)*.4
+  421 eye(5).*4
+  422 DD =eye(5).*4
+  423 reshape(DD,16,1)
+  424 reshape(DD,25,1)
+  425 DD
+  426 DD
+  427 RDD = reshape(DD,25,1)
+  428 find(RDD ==0)
+  429 RDD(find(RDD ==0))=1
+  430 RDD
+  431 history
+  432                 ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2)
+  433                 ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2)
+  434 whos
+  435 Part4SampleFactorOutput
+  436 length(Part4SampleFactorOutput.val)
+  437 whos
+  438 history
+  439               FP4 =  ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2)
+  440               FP4 =  ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2);
+  441               FP4 =  ComputeSimilarityFactor (Part4SampleImagesInput, imageModel.K, 1,2);
+  442 length(FP4.val)
+  443 length(Part4SampleFactorOutput.val)
+  444 Part4SampleFactorOutput.val == FP4.val
+  445 history
+  446        sum(Part4SampleImagesInput.val ==FP4.val)
+  447        sum(Part4SampleImagesOutput.val ==FP4.val)
+  448        sum(Part4SampleOutput.val ==FP4.val)
+  449 history
+  450                   sum(Part4SampleFactorOutput.val == FP4.val)
+  451                   sum(Part4SampleFactorOutput.val == FP4.val)
+  452 submit
+  453 4
+  454 y
+  455 whos
+  456 Part5SampleImagesInput
+  457 Part5SampleImagesInput(1)
+  458  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  459  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  460  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  461  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  462 Part5SampleOutput
+  463 whos
+  464 Part5SampleFactorsOutput
+  465 Part5SampleFactorsOutput(1)
+  466 Part5SampleFactorsOutput(2)
+  467 Part5SampleFactorsOutput(3)
+  468 Part5SampleFactorsOutput(3)
+  469 Part5SampleFactorsOutput(21)
+  470  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  471                   sum(Part4SampleFactorOutput.val == FP4.val)
+  472                 Part5SampleFactorOutput
+  473                 Part5SampleFactorOutput
+  474 whos
+  475 whos
+  476 Part5SampleFactorsOutput.val
+  477 Part5SampleFactorsOutput.val
+  478 Part5SampleFactorsOutput
+  479 Part5SampleFactorsOutput(1)
+  480 Part5SampleFactorsOutput(2)
+  481 Part5SampleFactorsOutput(7)
+  482 Part5SampleFactorsOutput(7)
+  483 Part5SampleFactorsOutput(4)
+  484 Part5SampleFactorsOutput(5)
+  485 Part5SampleFactorsOutput(6)
+  486 Part5SampleFactorsOutput(7)
+  487  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  488  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  489  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  490  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  491  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  492  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  493  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K);
+  494  ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  495 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  496 F5(1)
+  497 F5(21)
+  498 F5
+  499 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  500 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  501 F5(1)
+  502 F5(21)
+  503 Part5SampleFactorsOutput(7)
+  504                 Part5SampleFactorsOutput
+  505                 length(Part5SampleFactorsOutput(7).val)
+  506                 length(Part4SampleFactorOutput.val)
+  507 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  508 F5(1)
+  509 F5(1).er
+  510                 Part5SampleFactorsOutput
+  511                 Part5SampleFactorsOutput(1).var
+  512                 Part5SampleFactorsOutput(1).var == F5(1).var
+  513                 Part5SampleFactorsOutput(1).val == F5(1).val
+  514  F5(1).val
+  515                 Part5SampleFactorsOutput(1)
+  516                 Part5SampleFactorsOutput(1)
+  517 F5(1)
+  518                 Part5SampleFactorsOutput(1).val == F5(1).val
+  519                 Part5SampleFactorsOutput(1) == F5(1)
+  520 F5
+  521                 Part5SampleFactorsOutput
+  522                 Part5SampleFactorsOutput(1).var == F5(var
+  523 )
+  524                 Part5SampleFactorsOutput(1).var == F5(var)
+  525                 Part5SampleFactorsOutput(1).var == F5.var
+  526                 Part5SampleFactorsOutput
+  527 F5
+  528 F5(1)
+  529 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  530 F5(1)
+  531                 Part5SampleFactorsOutput(1)
+  532                 Part5SampleFactorsOutput(1).var == F5.var
+  533                 Part5SampleFactorsOutput(1).var == F5(1).var
+  534                 Part5SampleFactorsOutput(1).card == F5(1).card
+  535                 Part5SampleFactorsOutput(1).val == F5(1).val
+  536                 sum(Part5SampleFactorsOutput(1).val == F5(1).val)
+  537 for i=1:21 sum(Part5SampleFactorsOutput(i).val == F5(i).val) end
+  538 F5 = ComputeAllSimilarityFactors(Part5SampleImagesInput,imageModel.K)
+  539 for i=1:21 sum(Part5SampleFactorsOutput(i).val == F5(i).val) end
+  540 submit
+  541 5
+  542 y
+  543 whos
+  544 Part6SampleFactorsInput
+  545 Part6SampleFactorsInput(1)
+  546 Part6SampleFactorsInput
+  547 Part6SampleFactorsInput(1)
+  548                 sum(Part5SampleFactorsOutput(1).val == F5(1).val)
+  549 Part6SampleFactorsInput(1)
+  550 Part6SampleFactorsInput(2)
+  551 Part6SampleFactorsInput(2)
+  552 whos
+  553 Part6SampleFactorsOutput
+  554 Part6SampleFactorsInput.val(1)
+  555 Part6SampleFactorsInput.val
+  556 help sort
+  557 SM=[ 10 3 22 14 2]
+  558 sort(SM)
+  559 [s, i] = sort(SM)
+  560 Part6SampleFactorsInput(1).val(1)
+  561 Part6SampleFactorsInput(1:2).val(1)
+  562 Part6SampleFactorsInput(1:2)
+  563 whos
+  564 ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  565 ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  566 Part6SampleFactorsInput(2).val(1)
+  567 help sort
+  568 ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  569 Part6SampleFactorsInput(8).val(1)
+  570 Part6SampleFactorsInput(14).val(1)
+  571 Part6SampleFactorsInput([1 3 4])
+  572 SubA = Part6SampleFactorsInput([1 3 4])
+  573 SubA(3).val == Part6SampleFactorsInput(4).val
+  574                 sum(Part5SampleFactorsOutput(1).val == F5(1).val)
+  575 history
+  576              SubA(3).val(1)
+  577  Part6SampleFactorsInput(4).val(1)
+  578 ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  579 F6 = ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  580 whos
+  581 F6(1) 
+  582 Part6SampleFactorsOutput(1)
+  583 Part6SampleFactorsOutput(1)
+  584 Part6SampleFactorsOutput(2)
+  585 F6(2)
+  586 F6 = ChooseTopSimilarityFactors (Part6SampleFactorsInput, 3)
+  587 F6(1)
+  588 F6(2)
+  589 F6(3)
+  590 F6 = ChooseTopSimilarityFactors (Part6SampleFactorsInput, 3)
+  591 Part6SampleFactorsInput
+  592 F6 = ChooseTopSimilarityFactors (Part6SampleFactorsInput, 5)
+  593 F6(5)
+  594 F6(4)
+  595 F6(3)
+  596 F6(2)
+  597 F6(1)
+  598 F6 = ChooseTopSimilarityFactors (Part6SampleFactorsInput, 2)
+  599 F6(1)
+  600 F6(2)
+  601 Part6SampleFactorsOutput(1)
+  602 Part6SampleFactorsOutput(2)
+  603 submit
+  604 6
+  605 y
+  606 quit
+  607 # Octave 3.4.3, Sun Apr 08 19:12:34 2012 EDT <lals@lals-desktop>
+  608 whos
+  609 ls
+  610 load('PA3Data.mat');
+  611 load('PA3Models.mat')
+  612 load('PA3SampleCases.mat');
+  613 [charAcc, wordAcc] = ScoreModel(allWords, imageModel, [], []);
+  614 vi RunInf*m
+  615 quit
+  616 # Octave 3.4.3, Tue Apr 10 00:28:59 2012 EDT <lals@lals-desktop>
+  617 whos
+  618 pwd
+  619 ls
+  620 ls -l *mat
+  621 history | grep load
+  622 load('PA4Sample.mat');
+  623 load('PA4Test.mat');
+  624 whos
+  625 ComputeExactMarginalsBP(SixPersonPedigree, [], 0);.
+  626 SPP=ComputeExactMarginalsBP(SixPersonPedigree, [], 0);
+  627             SPP
+  628 SPP(1)
+  629 SPP(5)
+  630 SPP(12)
+  631 NPP=ComputeExactMarginalsBP(NinePersonPedigree, [], 0);
+  632            NPP
+  633            NPP(18)
+  634            NPP(12)
+  635            NPP(4)
+  636            NPP(4)
+  637            SPP(4)
+  638            SPP(12)
+  639            NPP(12)
+  640            NPP(18)
+  641            NPP(17)
+  642            NPP.val
+  643 SPP.val
+  644 NPP1=ComputeExactMarginalsBP(NinePersonPedigree, [1], 0);
+  645            NPP1.val
+  646        help setdiff
+  647 vv=[1 2 3 4; 5 6 7 8; 9 10 11 12]
+  648 vv(:,1)
+  649 mapB=[1]
+  650 vv(:,mapB)
+  651 mapB=[1 2]
+  652 vv(:,mapB)
+  653 max(4,5)
+  654 whosa
+  655 whos
+  656 FactorMAx
+  657 FactorMax
+  658 B = FactorMaxMarginalization(FactorMax.INPUT1, FactorMax.IMPUT2)
+  659 B = FactorMaxMarginalization(FactorMax.INPUT1, FactorMax.INPUT2)
+  660 B = FactorMaxMarginalization(FactorMax.INPUT1, FactorMax.INPUT2)
+  661 B = FactorMaxMarginalization(FactorMax.INPUT1, FactorMax.INPUT2)
+  662 B = FactorMaxMarginalization(FactorMax.INPUT1, FactorMax.INPUT2)
+  663 FactorMax.INPUT1
+  664 FactorMax.RESULT
+  665 FactorMax
+  666 whos
+  667 FactorMax
+  668 ls
+  669 ls *mat
+  670 load('PA4Sample.mat');
+  671 load('PA4Test.mat');
+  672 whos
+  673 FactorMAx
+  674 FactorMax
+  675 submit
+  676 5
+  677 y
+  678 submit
+  679 4
+  680 y
+  681 help log
+  682 history
+  683  whos
+  684 SumProdCaibrate
+  685 SumProdCalibrate
+  686 ls
+  687 ls *mat
+  688 load('PA4Sample.mat')
+  689 load('PA4Test.mat')
+  690 whos
+  691 SumProdCalibrate
+  692 InitPotential
+  693 quit
+  694 # Octave 3.4.3, Mon Apr 16 19:54:41 2012 EDT <lals@lals-desktop>
+  695 ls
+  696 ls *mat
+  697 load('PA4Sample.mat');
+  698 whos
+  699 FactorMax
+  700 MaxSumCalibrate
+  701 MaxSumCalibrate.cliqueList(1)
+  702 MaxSumCalibrate.cliqueList(1)
+  703 MaxSumCalibrate.RESULT.cliqueList(1)
+  704 log(MaxSumCalibrate.RESULT.cliqueList(1).val)
+  705 MaxSumCalibrate.RESULT.cliqueList(1).val
+  706               
+  707 MaxSumCalibrate.RESULT.cliqueList(2).val
+  708                   sum(Part4SampleFactorOutput.val == FP4.val)
+  709 clear
+  710 whos
+  711 history
+  712               load('PA4Sample.mat');
+  713 whos
+  714 MaxSumCalibrate
+  715               load('PA4Sample.mat');
+  716 MaxSumCalibrate.INPUT.cliqueList
+  717 MaxSumCalibrate.INPUT.cliqueList*4)
+  718 MaxSumCalibrate.INPUT.cliqueList(4)
+  719 MaxSumCalibrate.INPUT.cliqueList(5)
+  720 MaxSumCalibrate.INPUT.cliqueList(6)
+  721 MaxSumCalibrate.INPUT.cliqueList(6)
+  722 MaxSumCalibrate.INPUT.cliqueList(1)
+  723              
+  724 MaxSumCalibrate.INPUT.cliqueList(1)
+  725 MaxSumCalibrate.INPUT.cliqueList(4)
+  726 log(MaxSumCalibrate.INPUT.cliqueList(4))
+  727 log(MaxSumCalibrate.INPUT.cliqueList(4).val)
+  728    
+  729 MaxSumCalibrate.INPUT
+  730  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  731 who
+  732 whos
+  733 FactorMaxMarginalization(MaxSumCalibrate.RESULT.cliqueList(1), [2])
+  734  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  735  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  736     
+  737  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  738  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  739  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  740  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  741             
+  742  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  743 MaxSumCalibrate.INPUT
+  744 MaxSumCalibrate.INPUT(1)
+  745 FF=MaxSumCalibrate.INPUT(1)
+  746          
+  747  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  748  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  749       q
+  750  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  751  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  752 MaxSumCalibrate.INPUT.cliqueList(1)
+  753 log(MaxSumCalibrate.INPUT.cliqueList(1))
+  754 log(MaxSumCalibrate.INPUT.cliqueList(1).val)
+  755 FF1=MaxSumCalibrate.INPUT.cliqueList(1)
+  756  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  757  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  758               
+  759  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  760  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  761  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  762  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  763  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  764  CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  765  
+  766 MP=CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1)
+  767               MP.cliqueList(1)
+  768 whos
+  769 MaxSumCalibrate
+  770 MaxSumCalibrate.RESULT(1)
+  771 MaxSumCalibrate.RESULT.clieuqList(1)
+  772 MaxSumCalibrate.RESULT.cliqueList(1)
+  773               MP.cliqueList(1)
+  774 MaxSumCalibrate.RESULT.cliqueList(1).val==MP.cliqueList(1).val
+  775 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) <1.0E-16
+  776 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) < 0.001
+  777 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) < 0.1
+  778 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) 
+  779 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) ~=NaN
+  780 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) !=MaM
+  781 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) != NaN
+  782 abs(MaxSumCalibrate.RESULT.cliqueList(1).val - MP.cliqueList(1).val) 
+  783 MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf
+  784 MaxSumCalibrate.RESULT.cliqueList(1).val == MP.cliqueList(1).val
+  785 (MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) &&(MP.cliqueList(1).val == -Inf)
+  786 (MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) && (MP.cliqueList(1).val == -Inf)
+  787 (MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) 
+  788 sum(MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) 
+  789 sum(MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) 
+  790 sum(MP.cliqueList(1).val == -Inf) 
+  791 vmp=(MP.cliqueList(1).val == -Inf) 
+  792 vmptest=(MaxSumCalibrate.RESULT.cliqueList(1).val == -Inf) 
+  793 vmp==vmptest
+  794 vmp
+  795 vmp==vmptest
+  796 all(vmp==vmptest)
+  797 history
+  798               abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MP.cliqueList(2).val)
+  799               abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MP.cliqueList(2).val) < 1.0e-15
+  800              sum( abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MP.cliqueList(2).val) < 1.0e-15)
+  801 MaxSumCalibrate.RESULT.cliqueList(2).val ==-Inf
+  802 sum(MaxSumCalibrate.RESULT.cliqueList(2).val ==-Inf)
+  803 length(MaxSumCalibrate.RESULT.cliqueList(2).val)
+  804 sum(MaxSumCalibrate.RESULT.cliqueList(2).val ==-Inf)
+  805              sum( abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MP.cliqueList(2).val) < 1.0e-14)
+  806 sum( abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MP.cliqueList(2).val) < 1.0e-14)
+  807 sum(MaxSumCalibrate.RESULT.cliqueList(2).val ==-Inf)
+  808 sum(MP.cliqueList(2).val ==-Inf)
+  809 sum(MP.cliqueList(3).val ==-Inf)
+  810 sum(MaxSumCalibrate.RESULT.cliqueList(3).val ==-Inf)
+  811 sum( abs(MaxSumCalibrate.RESULT.cliqueList(3).val - MP.cliqueList(3).val) < 1.0e-14)
+  812 sum( abs(MaxSumCalibrate.RESULT.cliqueList(3).val - MP.cliqueList(3).val) < 1.0e-13)
+  813 sum( abs(MaxSumCalibrate.RESULT.cliqueList(4).val - MP.cliqueList(4).val) < 1.0e-13)
+  814 sum(MaxSumCalibrate.RESULT.cliqueList(4).val ==-Inf)
+  815 sum(MP.cliqueList(4).val ==-Inf)
+  816 sum(MP.cliqueList(5).val ==-Inf)
+  817 sum(MP.cliqueList(5).val ==-Inf)
+  818 sum(MaxSumCalibrate.RESULT.cliqueList(5).val ==-Inf)
+  819 sum( abs(MaxSumCalibrate.RESULT.cliqueList(5).val - MP.cliqueList(5).val) < 1.0e-13)
+  820 sum( abs(MaxSumCalibrate.RESULT.cliqueList(5).val - MP.cliqueList(5).val) < 1.0e-14)
+  821 sum( abs(MaxSumCalibrate.RESULT.cliqueList(5).val - MP.cliqueList(5).val) < 1.0e-13)
+  822 sum( abs(MaxSumCalibrate.RESULT.cliqueList(6).val - MP.cliqueList(6).val) < 1.0e-13)
+  823 sum(MaxSumCalibrate.RESULT.cliqueList(6).val ==-Inf)
+  824 sum(MP.cliqueList(6).val ==-Inf)
+  825 MP.cliqueList(6).val
+  826 MaxSumCalibrate.RESULT.cliqueList(6).val
+  827 history
+  828           
+  829 MPP1=CliqueTreeCalibrate(MaxSumCalibrate.INPUT,1);
+  830               abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MPP1.cliqueList(2).val) < 1.0e-15
+  831               sum(abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MPP1.cliqueList(2).val) < 1.0e-15)
+  832               sum(abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MPP1.cliqueList(2).val) < 1.0e-14)
+  833 sum(MPP1.cliqueList(2).val ==-Inf)
+  834 submit
+  835 6
+  836 y
+  837 whos
+  838 MaxMarginals
+  839 EMM=ComputeExactMarginalsBP(MaxMarginals.INPUT,[],1)
+  840          EMM
+  841 ComputeExactMarginalsBP(MaxMarginals.RESULT
+  842 MaxMarginals.RESULT
+  843 EMM(1)
+  844 MaxMarginals.RESULT(1)
+  845 MaxMarginals.RESULT(1).val == EMM(1).val
+  846 all(MaxMarginals.RESULT(1).val == EMM(1).val)
+  847 all(MaxMarginals.RESULT(2).val == EMM(2).val)
+  848 all(MaxMarginals.RESULT(3).val == EMM(3).val)
+  849 all(MaxMarginals.RESULT(4).val == EMM(4).val)
+  850 all(MaxMarginals.RESULT(5).val == EMM(5).val)
+  851 all(MaxMarginals.RESULT(6).val == EMM(6).val)
+  852 all(MaxMarginals.RESULT(7).val == EMM(7).val)
+  853 MaxMarginals.RESULT(7).val
+  854 MaxMarginals.RESULT(7)
+  855 MaxMarginals.RESULT(7).val
+  856 EMM(7)
+  857 MaxMarginals.RESULT(6).val
+  858 EMM(6)
+  859 submit
+  860 7
+  861 y
+  862 quit
+  863 # Octave 3.4.3, Tue Apr 17 01:45:53 2012 EDT <lals@lals-desktop>
+  864 whos
+  865 load('PA4Sample.mat')
+  866 whos
+  867 MaxDecoded
+  868 MaxDecoded.INPUT
+  869 MaxDecoded.INPUT(1)
+  870 help max
+  871 vv=[ 5 10 3 4 6]
+  872 max(vv)
+  873 [dummy, ind] = max(vv)
+  874 A=MaxDecoding(MaxDecoded.INPUT)
+  875 A=MaxDecoding(MaxDecoded.INPUT)
+  876 MaxDecoded.RESULT
+  877 A==MaxDecoded.RESULT
+  878 all(A==MaxDecoded.RESULT)
+  879 submit
+  880 8
+  881 y
+  882 OCRNetworkToRun
+  883 OCRNetworkToRun
+  884 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [], 1);
+  885 whos
+  886 MAPAssignment = MaxDecoding(maxMarginals);
+  887 DecodedMarginalsToChars(MAPAssignment)
+  888 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [1], 1);
+  889 MAPAssignment = MaxDecoding(maxMarginals);
+  890 DecodedMarginalsToChars(MAPAssignment)
+  891 OCRNetworkToRun
+  892 OCRNetworkToRun(1)
+  893 OCRNetworkToRun(2)
+  894 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [2], 1);
+  895 MAPAssignment = MaxDecoding(maxMarginals);
+  896 DecodedMarginalsToChars(MAPAssignment)
+  897 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [0 0], 1);
+  898 MAPAssignment = MaxDecoding(maxMarginals);
+  899 DecodedMarginalsToChars(MAPAssignment)
+  900 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [0 0 3 11], 1);
+  901 MAPAssignment = MaxDecoding(maxMarginals);
+  902 DecodedMarginalsToChars(MAPAssignment)
+  903  M = ComputeExactMarginalsBP(SixPersonPedigree, [1], 0)
+  904  M = ComputeExactMarginalsBP(SixPersonPedigree, [1], 0)
+  905 ME=ComputeMarginal(5,SixPersonPedigree,[1 1]).
+  906 ME=ComputeMarginal(5,SixPersonPedigree,[1 1])
+  907 M
+  908 M(5)
+  909 SixPersonPedigree
+  910 SixPersonPedigree(5)
+  911 SixPersonPedigree(1)
+  912 ME3=ComputeMarginal(5,SixPersonPedigree,[1 3])
+  913  M = ComputeExactMarginalsBP(SixPersonPedigree, [3], 0)
+  914  ME
+  915  M(5)
+  916 ME3=ComputeMarginal(5,SixPersonPedigree,[1 3])
+  917  M = ComputeExactMarginalsBP(SixPersonPedigree, [3], 0)
+  918        M(5)
+  919 ME3
+  920 M
+  921 ME
+  922 PWD
+  923 pwd
+  924 addpath('/home/lals/Desktop/PGM-2012/Programming_Assignment_4')
+  925 addpath('/home/lals/Desktop/PGM-2012/Programming_Assignment_3')
+  926 load('PA3Data.mat
+  927 load('PA3Data.mat');
+  928 load('PA3Models.mat');
+  929 who
+  930 whos
+  931 clear
+  932 whos
+  933 load('PA3Models.mat');
+  934 load('PA3Data.mat');
+  935 whos
+  936 factors = BuildOCRNetwork(allWords{i}, imageModel, [], tripletList);
+  937 allWrods{1}0
+  938 allWrods{1}
+  939 allWordds{1}
+  940 allWords{1}
+  941 allWords{1}.groudTruth
+  942 allWords{1}.groudnTruth
+  943 allWords{1}.groundTruth
+  944 char(64+allWords{1}.groundTruth)
+  945 char(64+allWords{1}.groundTruth)
+  946 char(64+allWords{1}.groundTruth(1))
+  947 char(64+allWords{1}.groundTruth{1})
+  948 allWords{1}.groundTruth{1}
+  949 allWords{1}.groundTruth
+  950 allWords{1}.groundTruth
+  951 allWords{1}.groundTruth
+  952 allWords{1}.groundTruth{1}
+  953 allWords{1}.groundTruth(1)
+  954 allWords{1}.groundTruth
+  955 allWords{1}.groundTruth[1]
+  956 allWords{1}.groundTruth[1,1]
+  957 allWords{1}.groundTruth(1)
+  958 allWords{1}.groundTruth(1,1)
+  959 char(64+20)
+  960 char(64+13)
+  961 char(64+15)
+  962 char(64+18)
+  963 char(64+20)
+  964 char(64+21)
+  965 char(64+9)
+  966 char(64+14)
+  967 char(64+7)
+  968 allWords{2}.groundTruth
+  969 char(64+22)
+  970 char(64+5)
+  971 char(64+18)
+  972 char(64+19)
+  973 char(64+5)
+  974 char(64+19)
+  975 factors = BuildOCRNetwork(allWords{i}, imageModel, [], tripletList);
+  976 factors = BuildOCRNetwork(allWords{2}, imageModel, [], tripletList);
+  977 factors
+  978 maxMarginals = ComputeExactMarginalsBP(
+  979 maxMarginals = ComputeExactMarginalsBP(factors,[],1)
+  980 factors
+  981 load(’PA4Sample.mat’, ’OCRNetworkToRun’);
+  982 load(’PA4Sample.mat’);
+  983 load('PA4Sample.mat', 'OCRNetworkToRun');
+  984 OCRNetwordToRun
+  985 OCRNetworkToRun
+  986 maxMarginals = ComputeExactMarginalsBP(OCRNetworkToRun, [], 1);
+  987            MAPAssignment = MaxDecoding(maxMarginals);
+  988 DecodedMarginalsToChars(MAPAssignment)
+  989 whos
+  990 OCRNetworkToRun
+  991 OCRNetworkToRun(1)
+  992 factors
+  993 factors(1)
+  994 fori=1,length(factors) factors(i).val=factors(i).val'end
+  995 fori=1,length(factors) factors(i).val=factors(i).val' end
+  996 for i=1,length(factors) factors(i).val=factors(i).val' end
+  997 for i=1,length(factors) factors(i).val=transpose(factors(i).val)  end
+  998 for i=1:length(factors) factors(i).val=factors(i).val' end
+  999 factors(1).val
+ 1000 history
+ 1001              maxMarginals = ComputeExactMarginalsBP(factors,[],1)
+ 1002 MAPAssignment = MaxDecoding(maxMarginals);
+ 1003 DecodedMarginalsToChars(MAPAssignment)
+ 1004 factors = BuildOCRNetwork(allWords{3}, imageModel, [], tripletList);
+ 1005 for i=1:length(factors) factors(i).val=factors(i).val' end
+ 1006 maxMarginals = ComputeExactMarginalsBP(factors,[],1)
+ 1007 MAPAssignment = MaxDecoding(maxMarginals);
+ 1008 DecodedMarginalsToChars(MAPAssignment)
+ 1009 history
+ 1010 tripletList
+ 1011 whos
+ 1012 more pairwiseModel
+ 1013 more pairwiseModel
+ 1014 pairwiseModel
+ 1015 clear
+ 1016               sum(abs(MaxSumCalibrate.RESULT.cliqueList(2).val - MPP1.cliqueList(2).val) < 1.0e-14)
+ 1017 factors = BuildOCRNetwork(allWords{3}, imageModel, pairwiseModel,[]);
+ 1018 factors = BuildOCRNetwork(allWords{3}, imageModel, pairwiseModel,[]);
+ 1019 whos
+ 1020 whos
+ 1021 history
+ 1022 quit
+ 1023 # Octave 3.4.3, Thu Apr 19 19:07:45 2012 EDT <lals@lals-desktop>
+ 1024 pwd
+ 1025 addpath('/home/lals/Desktop/PGM-2012/Programming_Assignment_3')
+ 1026 history
